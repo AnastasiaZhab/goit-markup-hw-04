@@ -101,6 +101,11 @@ p {
   color: var(--accent-color);
 }
 
+.aside-link:hover svg,
+.aside-link:focus svg {
+  fill: var(--accent-color);
+}
+
 .container {
   padding: 0 15px;
   width: 1200px;
@@ -147,10 +152,6 @@ p {
 .aside-link {
   padding-top: 32px;
   padding-bottom: 32px;
-}
-
-.aside-link:hover svg {
-  fill: var(--accent-color);
 }
 
 .aside-item + .aside-item {
@@ -209,6 +210,17 @@ p {
 /* .portfolio-nav-button {
   display: block;
 } */
+.portfolio-link {
+  display: block;
+  text-decoration: none;
+}
+
+.portfolio-link:focus,
+.portfolio-link:hover {
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 
 .portfolio-nav-button > button:hover,
 .portfolio-nav-button > button:focus {
@@ -259,13 +271,6 @@ p {
   color: var(--primary-white-color);
 }
 
-.portfolio-item:focus,
-.portfolio-item:hover {
-  background-color: var(--primary-white-color);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
 .subtitle {
   color: var(--primary-text-color);
   font-weight: bold;
@@ -282,9 +287,7 @@ p {
   line-height: 1.875;
   letter-spacing: 0.03em;
 }
-.portfolio-link {
-  text-decoration: none;
-}
+
 .button {
   border-radius: 4px;
   border-color: transparent;
@@ -374,10 +377,6 @@ p {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.footer-social-link:hover svg,
-.footer-social-link:focus svg {
-  fill: var(--primary-white-color);
-}
 .footer-social-link:hover,
 .footer-social-link:focus {
   background-color: var(--accent-color);
@@ -397,7 +396,7 @@ p {
   /*display: block;*/
   width: 20px;
   height: 20px;
-  fill: rgba(255, 255, 255, 0.6);
+  fill: var(--primary-white-color);
 }
 
 .footer-social-item {
@@ -517,7 +516,6 @@ p {
 }
 
 .our-team-item {
-  padding-bottom: 30px;
   background-color: var(--primary-white-color);
 
   width: 270px;
@@ -534,15 +532,16 @@ p {
   display: block;
   max-width: 100%;
   height: auto;
-  margin-bottom: 30px;
+}
+
+.team-name-text {
+  margin: 30px 32px;
 }
 
 .social {
   display: flex;
   width: 206px;
   height: 44px;
-  margin-left: 32px;
-  margin-right: 32px;
   fill: var(--social);
 }
 
@@ -594,6 +593,54 @@ p {
   height: auto;
 }
 
+/******************* Наши клиенты *********************/
+
+.clients-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  justify-content: center;
+}
+
+.clients-logo {
+  fill: var(--social);
+  width: 106px;
+  height: 60px;
+}
+
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+
+  border: 1px solid var(--social);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.clients-item {
+  border-color: var(--social);
+}
+
+.clients-link:hover svg,
+.clients-link:focus svg {
+  fill: var(--accent-color);
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--accent-color);
+  cursor: pointer;
+}
+
 /* *************Кнопка баннера ********************/
 .banner > button {
   font-style: normal;
@@ -640,64 +687,15 @@ p {
 
 .features-icon {
   display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   list-style: none;
-  padding: 25px 100px;
+  /* padding: 25px 100px; */
   margin-bottom: 30px;
 
   width: 270px;
   height: 120px;
   background: var(--portfolio-button);
   border-radius: 4px;
-}
-
-/******************* Наши клиенты *********************/
-.icons {
-  /* width: 70px;
-  height: 70px;*/
-  text-align: center;
-}
-
-.clients-list {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  justify-content: center;
-}
-
-.clients-logo {
-  fill: var(--social);
-  width: 106px;
-  height: 60px;
-}
-
-.clients-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 170px;
-  height: 92px;
-
-  border: 1px solid var(--social);
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.clients-item:not(:last-child) {
-  margin-right: 30px;
-}
-
-.clients-item {
-  border-color: var(--social);
-}
-
-.clients-link:hover svg,
-.clients-link:focus svg {
-  fill: var(--accent-color);
-}
-
-.clients-link:hover,
-.clients-link:focus {
-  border-color: var(--accent-color);
-  cursor: pointer;
 }
